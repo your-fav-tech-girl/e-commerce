@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My TypeScript Task</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=Miniver&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Space+Grotesk:wght@600&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./src/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <!-- Left side: Logo and Nav Links -->
+        <div class="left-section">
+          <div class="logo">
+            <img src="./src/images/logo.svg" />
+          </div>
+
+          <nav class="nav-links" id="nav-links">
+            <ul>
+              <li><a href="">Collections</a></li>
+              <li><a href="">Men</a></li>
+              <li><a href="">Women</a></li>
+              <li><a href="">About</a></li>
+              <li><a href="">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Right side: Cart and Avatar -->
+        <div class="right-section">
+          <div class="cart-icon">
+            <img src="./src/images/icon-cart.svg" width="30px" />
+          </div>
+          <div class="avatar">
+            <img src="./src/images/image-avatar.png" width="40px" />
+          </div>
+        </div>
+
+        <!-- Mobile menu toggle -->
+        <button class="menu-toggle" id="menu-toggle">
+          <img src="./src/images/icon-menu.svg" />
+        </button>
+      </header>
+
+      <section id="container">
+        <div class="hero-pic">
+          <!-- Main image -->
+          <img id="main-img" src="./src/images/image-product-1.jpg" />
+
+          <!-- Prev & Next buttons -->
+          <button id="prev-btn" class="nav-btn">❮</button>
+          <button id="next-btn" class="nav-btn">❯</button>
+
+          <!-- Thumbnails -->
+          <div class="hero-pics">
+            <img
+              class="thumbnails"
+              src="./src/images/image-product-1-thumbnail.jpg"
+            />
+            <img
+              class="thumbnails"
+              src="./src/images/image-product-2-thumbnail.jpg"
+            />
+            <img
+              class="thumbnails"
+              src="./src/images/image-product-3-thumbnail.jpg"
+            />
+            <img
+              class="thumbnails"
+              src="./src/images/image-product-4-thumbnail.jpg"
+            />
+          </div>
+        </div>
+
+        <div class="hero-text">
+          <h5>SNEAKER COMPANY</h5>
+          <h2>
+            Fall Limited Edition<br />
+            Sneakers
+          </h2>
+          <p class="low">
+            These low-profile sneakers are your perfect casual wear<br />
+            companion. Featuring a durable rubber outer sole,<br />they'll
+            withstand everything the weather can offer.
+          </p>
+          <p id="cart-total-price" class="discount">
+            $125.00<span class="percent">50%</span>
+          </p>
+          <p id="cart-total-price" class="price">$250.00</p>
+
+          <div class="buttons">
+            <div class="counter">
+              <img id="decrement" src="./src/images/icon-minus.svg" />
+              <span id="count">0</span>
+              <img id="increment" src="./src/images/icon-plus.svg" />
+            </div>
+
+            <button id="add">
+              <img
+                src="./src/images/icon-cart.svg"
+                alt="Cart"
+                width="20"
+                height="20"
+                color="black"
+              />
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Include your compiled JavaScript -->
+
+    <script src="dist/index.js"></script>
+  </body>
+</html>

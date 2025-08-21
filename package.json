@@ -1,0 +1,21 @@
+{
+  "name": "my-typescript-project",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "live-server": "^1.2.2",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "tailwindcss": "^4.1.12"
+  }
+}
