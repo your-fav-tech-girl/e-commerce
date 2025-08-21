@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "ts-node src/index.ts",
-    "build": "tsc",
+    "build:ts": "tsc",
+    "build": "npm run build:ts && cp ./index.html ./dist/index.html && cp ./index.css ./dist/index.css",
     "start": "npm run build && live-server dist",
     "watch": "tsc --watch",
     "clean": "rimraf dist"
