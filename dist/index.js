@@ -1,5 +1,7 @@
 "use strict";
 // DOM Elements
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
 const mainImg = document.getElementById("main-img");
 const thumbnails = document.querySelectorAll(".thumbnails");
 const prevBtn = document.getElementById("prev-btn");
@@ -10,8 +12,34 @@ const countSpan = document.getElementById("count");
 const addBtn = document.getElementById("add");
 const cartIcon = document.querySelector(".cart-icon");
 const cartTotalPriceElem = document.getElementById("cart-total-price");
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
+let isMenuOpen = false;
+menuToggle.addEventListener("click", () => {
+    isMenuOpen = !isMenuOpen;
+    if (isMenuOpen) {
+        navLinks.classList.add("active");
+    }
+    else {
+        navLinks.classList.remove("active");
+    }
+});
+// Optional: Close menu when clicking outside
+document.addEventListener("click", (e) => {
+    const target = e.target;
+    if (!menuToggle.contains(target) &&
+        !navLinks.contains(target) &&
+        isMenuOpen) {
+        isMenuOpen = false;
+        navLinks.classList.remove("active");
+    }
+});
+// Optional: Close menu when clicking on nav links
+const navLinksItems = navLinks.querySelectorAll("a");
+navLinksItems.forEach((link) => {
+    link.addEventListener("click", () => {
+        isMenuOpen = false;
+        navLinks.classList.remove("active");
+    });
+});
 // ======== Product Data ========
 const productImages = [
     "./src/images/image-product-1.jpg",
@@ -67,12 +95,12 @@ function renderCart() {
         itemDiv.style.alignItems = "center";
         itemDiv.style.marginBottom = "10px";
         itemDiv.innerHTML = `
-      <img src="${item.image}" style="width:50px;height:50px;margin-right:10px;">
-      <div style="flex:1">
-        <p>${item.name}</p>
-        <p>$${item.price.toFixed(2)} x ${item.quantity} = $${itemTotal.toFixed(2)}</p>
-      </div>
-      <button class="remove-btn" data-id="${item.id}">Remove</button>
+      <span>${item.name}</span>
+      <button class="decrease">-</button>
+      <span>${item.quantity}</span>
+      <button class="increase">+</button>
+      <span>$${item.price * item.quantity}</span>
+      <span class="remove" style="cursor:pointer;">🗑️</span>
     `;
         cartDropdown.appendChild(itemDiv);
     });

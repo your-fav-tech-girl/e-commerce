@@ -4,13 +4,14 @@
   "scripts": {
     "dev": "ts-node src/index.ts",
     "build": "tsc",
-    "start": "npm run build && node dist/index.js",
+    "start": "npm run build && live-server dist",
     "watch": "tsc --watch",
-    "clean": "rm -rf dist"
+    "clean": "rimraf dist"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "live-server": "^1.2.2",
+    "rimraf": "^6.0.1",
     "ts-node": "^10.9.0",
     "typescript": "^5.9.2"
   },
