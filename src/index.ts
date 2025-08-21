@@ -64,10 +64,10 @@ navLinksItems.forEach((link) => {
 
 // ======== Product Data ========
 const productImages: ProductImage[] = [
-  "./src/images/image-product-1.jpg",
-  "./src/images/image-product-2.jpg",
-  "./src/images/image-product-3.jpg",
-  "./src/images/image-product-4.jpg",
+  "./images/image-product-1.jpg",
+  "./images/image-product-2.jpg",
+  "./images/image-product-3.jpg",
+  "./images/image-product-4.jpg",
 ];
 
 const productName: string = "Fall Limited Edition Sneakers";

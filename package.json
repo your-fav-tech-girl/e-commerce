@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "ts-node src/index.ts",
     "build:ts": "tsc",
-    "build": "npm run build:ts && mkdir -p dist && cpx index.html dist/index.html && cpx style.css dist/style.css && cpx -r images dist/images",
+    "build": "npm run build:ts && cpx index.html dist && cpx style.css dist && cpx \"images/**/*\" dist/images",
     "start": "npm run build && node dist/index.js",
     "watch": "tsc --watch",
     "clean": "rm -rf dist"
@@ -13,6 +13,7 @@
     "@types/node": "^20.0.0",
     "cpx": "^1.5.0",
     "live-server": "^1.2.2",
+    "rimraf": "^6.0.1",
     "ts-node": "^10.9.0",
     "typescript": "^5.9.2"
   }
